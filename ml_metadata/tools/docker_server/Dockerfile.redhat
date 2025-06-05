@@ -32,6 +32,8 @@ RUN mkdir /bazel && \
 COPY . /mlmd-src
 WORKDIR /mlmd-src
 
+RUN sed -i "s/ac37cf5c0d80b5605176fc0f29e87b12f00be693/f764f4e986ac1516ab5ae95e6d6ce2f4416cc6ff/g" WORKSPACE && sed -i "s/651a768cd51627f58aa6de7039aba9ddab22f4b0450521169800555269447840/27e3d8bfd1f76918fc4d7a8f29646b8a0cdca567f921e0bff4a07f79448e92c0/g" WORKSPACE
+ 
 # Running in offline mode with --nofetch arg, cache and deps must be cloned 
 # into the local root bazel cache
 # "-std=c++17" is needed in order to build with ZetaSQL.
