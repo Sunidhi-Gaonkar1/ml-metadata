@@ -1,8 +1,8 @@
-name: Build MLMD gRPC Server image for Master branch
+name: Build MLMD gRPC Server image for checking_wf_ml branch
 on:
   push:
     branches:
-      - master
+      - checking_wf_ml
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
@@ -12,7 +12,7 @@ env:
   QUAY_TOKEN: ${{ secrets.QUAY_PASSWORD }}
   MLMD_IMAGE_REPO: mlmd-grpc-server
   MLMD_IMAGE_DOCKERFILE: Dockerfile.redhat
-  SOURCE_BRANCH: master
+  SOURCE_BRANCH: checking_wf_ml
 
 jobs:
   build-image:
