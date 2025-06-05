@@ -9,6 +9,9 @@ on:
       - '.github/ISSUE_TEMPLATE/**'
       - '.github/dependabot.yml'
       - 'docs/**'
+  push:
+    branches:
+      - ml_checking    
 concurrency:
   group: ${{ github.workflow }}-${{ github.head_ref }}
   cancel-in-progress: true
